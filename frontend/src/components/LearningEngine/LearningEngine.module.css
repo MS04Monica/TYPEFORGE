@@ -1,0 +1,367 @@
+.engineArea {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.engineCard {
+  position: relative;
+
+  width: min(100%, 540px);
+
+  padding: 24px 26px 18px;
+
+  border: 1px solid rgba(36, 43, 191, 0.2);
+  border-radius: 18px;
+
+  background: rgba(255, 240, 201, 0.96);
+
+  box-shadow:
+    0 24px 70px rgba(16, 16, 30, 0.09),
+    0 8px 24px rgba(36, 43, 191, 0.05);
+
+  backdrop-filter: blur(14px);
+}
+
+/* --------------------------------
+   HEADER
+-------------------------------- */
+
+.engineTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 17px;
+
+  border-bottom: 1px solid rgba(36, 43, 191, 0.14);
+
+  color: #242bbf;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.live {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.liveDot {
+  display: block;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #242bbf;
+
+  box-shadow:
+    0 0 6px rgba(36, 43, 191, 0.6),
+    0 0 14px rgba(36, 43, 191, 0.25);
+
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* --------------------------------
+   ENGINE CONTENT
+-------------------------------- */
+
+.engineContent {
+  position: relative;
+
+  padding: 17px 0 8px 9px;
+}
+
+.engineTrack {
+  position: absolute;
+
+  top: 45px;
+  bottom: 30px;
+  left: 26px;
+
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(36, 43, 191, 0.55),
+    rgba(36, 43, 191, 0.12)
+  );
+}
+
+/* --------------------------------
+   STAGE
+-------------------------------- */
+
+.stage {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 84px;
+
+  gap: 18px;
+
+  opacity: 0.78;
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease;
+}
+
+.stage.active {
+  opacity: 1;
+
+  transform: translateX(4px);
+}
+
+/* --------------------------------
+   STAGE NUMBER
+-------------------------------- */
+
+.stageNumber {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  flex: 0 0 34px;
+
+  width: 34px;
+  height: 34px;
+
+  place-items: center;
+
+  border: 1px solid rgba(36, 43, 191, 0.3);
+  border-radius: 9px;
+
+  background: #fff0c9;
+
+  color: rgba(36, 43, 191, 0.65);
+
+  font-family: "Courier New", monospace;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  transition:
+    background 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.stage.active .stageNumber {
+  border-color: #242bbf;
+
+  background: #242bbf;
+
+  color: #fff0c9;
+
+  box-shadow:
+    0 0 0 4px rgba(36, 43, 191, 0.08),
+    0 5px 18px rgba(36, 43, 191, 0.18);
+}
+
+/* --------------------------------
+   STAGE CONTENT
+-------------------------------- */
+
+.stageContent {
+  min-width: 0;
+
+  padding-right: 5px;
+}
+
+.stageLabel {
+  color: rgba(17, 17, 26, 0.46);
+
+  font-family: "Courier New", monospace;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  line-height: 1.3;
+}
+
+.stageTitle {
+  margin-top: 6px;
+
+  color: rgba(17, 17, 26, 0.72);
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  transition: color 0.45s ease;
+}
+
+.stageDescription {
+  margin-top: 5px;
+
+  color: rgba(17, 17, 26, 0.58);
+
+  font-family: "Courier New", monospace;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  transition: color 0.45s ease;
+}
+
+.stage.active .stageTitle {
+  color: #242bbf;
+}
+
+.stage.active .stageDescription {
+  color: rgba(17, 17, 26, 0.7);
+}
+
+/* --------------------------------
+   NEXT PROBLEM
+-------------------------------- */
+
+.engineNext {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 5px;
+
+  padding: 14px;
+
+  border: 1px solid rgba(36, 43, 191, 0.15);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.nextContent {
+  min-width: 0;
+}
+
+.engineNext span {
+  display: block;
+
+  color: #242bbf;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.engineNext strong {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #11111a;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+.engineNext button {
+  display: grid;
+
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+
+  place-items: center;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: #242bbf;
+
+  color: #fff0c9;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.engineNext button:hover {
+  transform: translateX(3px);
+
+  box-shadow:
+    0 8px 20px rgba(36, 43, 191, 0.2);
+}
+
+/* --------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media (max-width: 700px) {
+  .engineCard {
+    width: 100%;
+
+    padding: 19px 17px 15px;
+  }
+
+  .stage {
+    min-height: 78px;
+
+    gap: 14px;
+  }
+
+  .stageTitle {
+    font-size: 14px;
+  }
+
+  .stageDescription {
+    font-size: 8px;
+  }
+
+  .engineNext strong {
+    max-width: 220px;
+
+    white-space: normal;
+  }
+}
