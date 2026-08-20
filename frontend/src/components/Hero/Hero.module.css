@@ -1,0 +1,674 @@
+.hero {
+  position: relative;
+
+  min-height: 730px;
+
+  padding: 55px 4vw 45px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+/* ==================================================
+   BACKGROUND GRID
+================================================== */
+
+.gridBackground {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  background-image:
+    linear-gradient(
+      rgba(36, 43, 191, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(36, 43, 191, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 46px 46px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.15) 65%,
+    transparent 100%
+  );
+}
+
+/* ==================================================
+   BACKGROUND RINGS
+================================================== */
+
+.rings {
+  position: absolute;
+
+  z-index: -2;
+
+  top: 48%;
+  left: 61%;
+
+  width: 760px;
+  height: 760px;
+
+  transform: translate(-50%, -50%);
+
+  border: 1px solid rgba(36, 43, 191, 0.095);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.rings::before {
+  position: absolute;
+
+  inset: 65px;
+
+  border: 1px solid rgba(36, 43, 191, 0.075);
+
+  border-radius: 50%;
+
+  content: "";
+}
+
+.rings::after {
+  position: absolute;
+
+  inset: 140px;
+
+  border: 1px solid rgba(36, 43, 191, 0.055);
+
+  border-radius: 50%;
+
+  content: "";
+}
+
+/* ==================================================
+   MAIN LAYOUT
+================================================== */
+
+.heroLayout {
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(500px, 1.05fr);
+
+  align-items: center;
+
+  width: min(100%, 1450px);
+
+  min-height: 625px;
+
+  margin: 0 auto;
+
+  gap: 5vw;
+}
+
+/* ==================================================
+   HERO COPY
+================================================== */
+
+.heroCopy {
+  position: relative;
+
+  min-width: 0;
+}
+
+/* ==================================================
+   EYEBROW
+================================================== */
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #242bbf;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  line-height: 1;
+}
+
+.eyebrowLine {
+  display: block;
+
+  width: 52px;
+
+  height: 2px;
+
+  background: #242bbf;
+}
+
+/* ==================================================
+   MAIN TYPOGRAPHY
+================================================== */
+
+.title {
+  display: flex;
+
+  flex-direction: column;
+
+  width: max-content;
+
+  max-width: 100%;
+
+  margin: 43px 0 0;
+
+  font-size: clamp(
+    4.2rem,
+    6.35vw,
+    6.9rem
+  );
+
+  font-weight: 950;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.075em;
+
+  text-transform: uppercase;
+}
+
+.lineBlack {
+  display: block;
+
+  color: #101019;
+
+  white-space: nowrap;
+}
+
+.lineBlue {
+  display: block;
+
+  color: #242bbf;
+
+  white-space: nowrap;
+}
+
+/* ==================================================
+   PATTERN — TWO T DETAIL
+================================================== */
+
+.doubleT {
+  display: inline-block;
+
+  margin-left: 0.035em;
+
+  letter-spacing: 0.055em;
+}
+
+/* ==================================================
+   PROBLEM REVEAL
+================================================== */
+
+.problemHidden {
+  opacity: 0;
+
+  transform: translateY(20px);
+
+  clip-path: inset(
+    0 100% 0 0
+  );
+}
+
+.problemVisible {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  clip-path: inset(
+    0 0 0 0
+  );
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.75s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    clip-path 0.95s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      );
+}
+
+/* ==================================================
+   DIVIDER
+================================================== */
+
+.divider {
+  width: 52px;
+
+  height: 2px;
+
+  margin-top: 42px;
+
+  background: #242bbf;
+}
+
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
+.description {
+  max-width: 470px;
+
+  margin: 24px 0 0;
+
+  color: rgba(
+    16,
+    16,
+    25,
+    0.66
+  );
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+/* ==================================================
+   ACTIONS
+================================================== */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 32px;
+
+  margin-top: 31px;
+}
+
+.primaryButton {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 35px;
+
+  min-width: 230px;
+
+  padding: 17px 20px;
+
+  border: 0;
+
+  background: #242bbf;
+
+  color: #fff0c9;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px
+    rgba(
+      36,
+      43,
+      191,
+      0.2
+    );
+}
+
+.secondaryButton {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 0;
+
+  border: 0;
+
+  border-bottom: 1px solid
+    #242bbf;
+
+  background: transparent;
+
+  color: #242bbf;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 17px;
+
+  line-height: 1;
+}
+
+/* ==================================================
+   FLOATING DSA TERMS
+================================================== */
+
+.floatingTerm {
+  position: absolute;
+
+  z-index: -1;
+
+  color: rgba(
+    36,
+    43,
+    191,
+    0.2
+  );
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 10px;
+
+  pointer-events: none;
+
+  animation:
+    floatingTerm 5s
+    ease-in-out infinite;
+}
+
+.termOne {
+  top: 12%;
+
+  left: 50%;
+}
+
+.termTwo {
+  top: 29%;
+
+  left: 39%;
+
+  animation-delay: 0.7s;
+}
+
+.termThree {
+  top: 60%;
+
+  left: 37%;
+
+  animation-delay: 1.2s;
+}
+
+.termFour {
+  top: 88%;
+
+  left: 51%;
+
+  animation-delay: 1.8s;
+}
+
+.termFive {
+  top: 15%;
+
+  right: 7%;
+
+  animation-delay: 0.4s;
+}
+
+.termSix {
+  top: 39%;
+
+  right: 7%;
+
+  animation-delay: 1s;
+}
+
+.termSeven {
+  top: 67%;
+
+  right: 7%;
+
+  animation-delay: 1.6s;
+}
+
+@keyframes floatingTerm {
+  0%,
+  100% {
+    opacity: 0.2;
+
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.48;
+
+    transform: translateY(-6px);
+  }
+}
+
+/* ==================================================
+   LARGE DESKTOP
+================================================== */
+
+@media (min-width: 1500px) {
+  .hero {
+    padding-left: 4.2vw;
+
+    padding-right: 4.2vw;
+  }
+
+  .heroLayout {
+    gap: 4vw;
+  }
+
+  .title {
+    font-size: 6.7rem;
+  }
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1150px) {
+  .hero {
+    padding:
+      50px
+      6vw
+      70px;
+  }
+
+  .heroLayout {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    gap: 60px;
+  }
+
+  .heroCopy {
+    max-width: 850px;
+  }
+
+  .title {
+    font-size: clamp(
+      4rem,
+      9vw,
+      6rem
+    );
+  }
+
+  .rings {
+    top: 57%;
+
+    left: 68%;
+
+    width: 700px;
+
+    height: 700px;
+  }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: auto;
+
+    padding:
+      40px
+      20px
+      65px;
+  }
+
+  .heroLayout {
+    min-height: auto;
+
+    gap: 50px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+  }
+
+  .eyebrowLine {
+    width: 38px;
+  }
+
+  .title {
+    width: 100%;
+
+    margin-top: 34px;
+
+    font-size:
+      clamp(
+        3.15rem,
+        14vw,
+        4.8rem
+      );
+
+    line-height: 0.9;
+
+    letter-spacing: -0.07em;
+  }
+
+  .lineBlack,
+  .lineBlue {
+    white-space: normal;
+  }
+
+  .description {
+    max-width: 390px;
+
+    font-size: 14px;
+  }
+
+  .actions {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 22px;
+  }
+
+  .primaryButton {
+    min-width: 215px;
+  }
+
+  .rings,
+  .floatingTerm {
+    display: none;
+  }
+}
+
+/* ==================================================
+   VERY SMALL MOBILE
+================================================== */
+
+@media (max-width: 420px) {
+  .hero {
+    padding:
+      35px
+      17px
+      55px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+}
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingTerm {
+    animation: none;
+  }
+
+  .problemHidden,
+  .problemVisible {
+    opacity: 1;
+
+    transform: none;
+
+    clip-path: none;
+
+    transition: none;
+  }
+}
