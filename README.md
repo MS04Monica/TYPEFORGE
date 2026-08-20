@@ -1,151 +1,363 @@
 # TYPEFORGE
 
-## Adaptive Typing Practice and Performance Platform
+## Progressive DSA Learning Platform
 
-TYPEFORGE is a full-stack typing practice platform designed to go beyond traditional typing tests. Instead of focusing only on Words Per Minute (WPM), TYPEFORGE analyzes typing behavior, identifies weaknesses, tracks performance, and provides personalized training.
+TYPEFORGE is a full-stack learning platform designed to help developers progressively build Data Structures and Algorithms problem-solving skills.
 
-The project is being developed with a focus on practical full-stack engineering, SQL, data analytics, adaptive learning, and real-time applications.
+Instead of presenting users with a large collection of problems and leaving them to decide what to solve next, TYPEFORGE focuses on structured progression, skill mastery, problem-solving patterns, and personalized recommendations.
+
+The goal is to answer a simple question:
+
+> What should I learn and solve next based on what I actually know?
 
 ---
 
 ## Overview
 
-Traditional typing platforms primarily provide a score after a typing test. TYPEFORGE aims to turn typing practice into a continuous learning process.
+Traditional coding practice platforms are primarily problem repositories. TYPEFORGE is designed around the learning process itself.
 
-A typical workflow will be:
+The platform evaluates a learner's performance across concepts, patterns, attempts, hints, mistakes, and problem difficulty to build an evolving understanding of their DSA skills.
 
 ```text
-Typing Session
-      |
-      v
-Performance Analysis
-      |
-      v
-Weakness Detection
-      |
-      v
-Personalized Training
-      |
-      v
-Progress Tracking
-      |
-      v
-Improved Performance
+Assess
+  |
+  v
+Learn
+  |
+  v
+Practice
+  |
+  v
+Analyze
+  |
+  v
+Adapt
+  |
+  v
+Master
 ```
 
-The system will use historical typing data to understand individual performance and adjust future practice accordingly.
+The system progressively moves learners from foundational concepts to advanced problem-solving and interview-level challenges.
+
+---
+
+## Core Principles
+
+### Progressive Learning
+
+Problems are introduced according to the learner's current level rather than simply being grouped into Easy, Medium, and Hard categories.
+
+A typical progression can be:
+
+```text
+Concept Introduction
+        |
+        v
+Guided Problem
+        |
+        v
+Similar Problem
+        |
+        v
+Problem Variation
+        |
+        v
+Mixed Pattern Problem
+        |
+        v
+Timed Problem
+        |
+        v
+Interview Challenge
+```
+
+### Concept Mastery
+
+TYPEFORGE tracks mastery at the concept and pattern level.
+
+For example:
+
+```text
+Arrays              86%
+Hashing             71%
+Two Pointers        64%
+Sliding Window      48%
+Trees               32%
+Graphs              18%
+Dynamic Programming  7%
+```
+
+Progress is based on actual problem-solving behavior rather than simply counting completed problems.
+
+### Adaptive Practice
+
+The platform analyzes previous attempts to determine what the learner should practice next.
+
+Recommendation factors include:
+
+* Concept mastery
+* Problem difficulty
+* Recent performance
+* Failed attempts
+* Time taken
+* Hint usage
+* Solution approach
+* Repeated mistakes
+* Problem-solving patterns
+* Recency of practice
 
 ---
 
 ## Key Features
 
-### Typing Engine
+### Progressive Learning Paths
 
-* Real-time typing interface
-* WPM calculation
-* Accuracy calculation
-* Error tracking
-* Backspace tracking
-* Character-level feedback
-* Configurable test duration
-* Session results
+Structured paths guide learners from fundamentals to advanced topics.
+
+Planned learning areas include:
+
+* Programming fundamentals
+* Complexity analysis
+* Arrays
+* Strings
+* Recursion
+* Linked Lists
+* Stacks
+* Queues
+* Hashing
+* Trees
+* Heaps
+* Graphs
+* Greedy algorithms
+* Backtracking
+* Dynamic Programming
+
+---
+
+### Problem-Solving Patterns
+
+TYPEFORGE emphasizes reusable problem-solving patterns rather than isolated problems.
+
+Planned patterns include:
+
+* Two Pointers
+* Sliding Window
+* Binary Search
+* Prefix Sum
+* Fast and Slow Pointers
+* Monotonic Stack
+* Backtracking
+* Greedy
+* Divide and Conquer
+* Dynamic Programming
+
+The objective is to help learners recognize which approach applies to an unfamiliar problem.
+
+---
+
+### Adaptive Problem Recommendations
+
+After each session, TYPEFORGE evaluates the learner's current knowledge and recommends the next problem.
+
+For example:
+
+```text
+Recommended Next Problem
+
+Longest Substring Without Repeating Characters
+
+Reason:
+Your array fundamentals are strong, but your
+sliding-window and hash-map application needs
+more practice.
+
+Focus:
+Hash Maps
+Sliding Window
+
+Difficulty:
+Intermediate
+```
+
+---
+
+### Progressive Hint System
+
+Hints are revealed gradually rather than immediately exposing the solution.
+
+```text
+Hint 1
+Identify the information that needs to be
+remembered while traversing the input.
+
+        |
+
+Hint 2
+Can previously encountered values help?
+
+        |
+
+Hint 3
+Consider using a HashMap.
+
+        |
+
+Hint 4
+Store each value along with the information
+required to determine the answer.
+```
+
+Hint usage becomes part of the learner's performance data.
+
+---
+
+### Submission Analysis
+
+A correct submission is not the end of the learning process.
+
+TYPEFORGE will analyze:
+
+* Time complexity
+* Space complexity
+* Approach used
+* Optimization opportunities
+* Number of attempts
+* Time taken
+* Hint usage
+
+Example:
+
+```text
+Your Solution
+
+Correct
+Time Complexity: O(n²)
+Space Complexity: O(1)
+
+Recommended Approach
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Focus Area:
+Hash Maps
+```
+
+---
+
+### Mistake Intelligence
+
+TYPEFORGE aims to identify recurring problem-solving mistakes rather than simply recording incorrect submissions.
+
+Potential mistake categories include:
+
+* Boundary condition errors
+* Incorrect loop conditions
+* Off-by-one errors
+* Incorrect data structure selection
+* Complexity issues
+* Missing edge cases
+* Incorrect recursion termination
+* Pattern misidentification
+* Unnecessary nested loops
+
+Repeated mistakes can influence future problem recommendations.
+
+---
+
+### Skill Graph
+
+Concepts and patterns will be represented as interconnected skills.
+
+```text
+                    Arrays
+                      |
+          +-----------+-----------+
+          |                       |
+          v                       v
+       Hashing              Two Pointers
+          |                       |
+          v                       v
+   Frequency Maps         Sliding Window
+          |                       |
+          +-----------+-----------+
+                      |
+                      v
+                Advanced Problems
+```
+
+Mastery of prerequisite concepts can unlock more advanced areas.
+
+---
+
+### Developer-Focused Practice
+
+The platform is designed for developers preparing for:
+
+* Technical interviews
+* Coding assessments
+* Competitive programming
+* Placement preparation
+* Stronger problem-solving fundamentals
+
+Future versions may include language-specific problem environments and code execution.
+
+---
 
 ### Performance Analytics
 
-* Average WPM
-* Best WPM
-* Accuracy trends
-* Error rate
-* Backspace statistics
-* Typing consistency
-* Words and characters typed
-* Practice time
-* Session history
+Learners will be able to track:
 
-### Adaptive Training
+* Problems attempted
+* Problems solved
+* Success rate
+* Average solving time
+* Concept mastery
+* Pattern mastery
+* Hint usage
+* Repeated mistakes
+* Difficulty progression
+* Weekly and monthly progress
 
-TYPEFORGE will identify areas where a user struggles and generate targeted exercises.
+The objective is to measure **learning progress**, not simply the number of solved problems.
 
-The system will analyze:
+---
 
-* Frequently mistyped keys
-* Common key combinations
-* Difficult words
-* Accuracy patterns
-* Speed consistency
-* Performance trends
+## Planned User Experience
 
-Future practice sessions can then be adjusted based on this information.
-
-### Developer Typing Mode
-
-A dedicated mode for practicing programming-related typing.
-
-Planned content includes:
-
-* Java
-* Python
-* JavaScript
-* C++
-* SQL
-* HTML and CSS
-* Git commands
-* Linux commands
-
-The system will also track performance with programming characters and syntax such as:
+The primary dashboard will focus on continuation rather than problem discovery.
 
 ```text
-{ } [ ] ( ) ; : < > / \ | ' "
+TYPEFORGE
+
+YOUR DSA JOURNEY
+
+Overall Mastery
+64%
+
+Arrays                86%
+Hashing               71%
+Linked Lists          54%
+Trees                 32%
+Graphs                18%
+Dynamic Programming    7%
+
+
+CONTINUE LEARNING
+
+Hash Maps
+Two Sum — Variation 03
+
+Difficulty
+Intermediate
+
+Focus
+Pattern Recognition
+
+[ CONTINUE ]
 ```
 
-### AI Typing Coach
-
-The planned AI coaching system will use a user's historical performance to generate personalized feedback.
-
-It will identify:
-
-* Performance strengths
-* Areas requiring improvement
-* Changes in typing speed
-* Accuracy patterns
-* Recommended practice areas
-* Progress over time
-
-### Gamification
-
-Planned features include:
-
-* Experience points
-* Levels
-* Daily challenges
-* Achievements
-* Practice streaks
-* Personal records
-* Weekly goals
-
-### Multiplayer
-
-TYPEFORGE will eventually support real-time typing competitions.
-
-Planned functionality includes:
-
-* One-versus-one typing battles
-* Private rooms
-* Matchmaking
-* Real-time progress
-* Battle history
-* Multiplayer rankings
-
-### Leaderboards
-
-Users will eventually be able to compare their performance through:
-
-* Global rankings
-* Weekly rankings
-* WPM rankings
-* Accuracy rankings
-* Friends rankings
-* Community or college rankings
+The learner should always have a clear next step.
 
 ---
 
@@ -153,14 +365,14 @@ Users will eventually be able to compare their performance through:
 
 ### Frontend
 
-| Technology    | Purpose                   |
-| ------------- | ------------------------- |
-| Next.js       | Frontend framework        |
-| React         | User interface            |
-| TypeScript    | Type-safe development     |
-| Tailwind CSS  | Styling                   |
-| Framer Motion | UI animations             |
-| Recharts      | Performance visualization |
+| Technology    | Purpose                 |
+| ------------- | ----------------------- |
+| Next.js       | Application framework   |
+| React         | User interface          |
+| TypeScript    | Type-safe development   |
+| Tailwind CSS  | Styling                 |
+| Framer Motion | Interface animation     |
+| Recharts      | Analytics visualization |
 
 ### Backend
 
@@ -169,36 +381,43 @@ Users will eventually be able to compare their performance through:
 | Node.js    | Backend runtime     |
 | Express.js | REST API            |
 | TypeScript | Backend development |
+| Zod        | Request validation  |
 | JWT        | Authentication      |
 | bcrypt     | Password hashing    |
-| Zod        | Request validation  |
 
 ### Database
 
-| Technology | Purpose                        |
-| ---------- | ------------------------------ |
-| PostgreSQL | Relational database            |
-| SQL        | Database queries and analytics |
-| Prisma     | Database ORM                   |
+| Technology | Purpose                    |
+| ---------- | -------------------------- |
+| PostgreSQL | Relational database        |
+| SQL        | Data queries and analytics |
+| Prisma     | Database ORM               |
 
-PostgreSQL is being used intentionally to gain practical experience with relational database design, SQL queries, relationships, indexing, and data analysis.
+PostgreSQL is intentionally part of the project to provide practical experience with relational database design, SQL queries, relationships, indexing, aggregation, and analytics.
 
-### Real-Time and AI
+### Code Execution
 
-| Technology | Purpose                                 |
-| ---------- | --------------------------------------- |
-| Socket.IO  | Real-time multiplayer functionality     |
-| LLM API    | AI-powered typing analysis and coaching |
+A sandboxed execution environment will be introduced for running submitted solutions safely.
 
-### Development and Deployment
+### AI
 
-| Technology       | Purpose                |
-| ---------------- | ---------------------- |
-| Git              | Version control        |
-| GitHub           | Source code management |
-| Vercel           | Frontend deployment    |
-| Render / Railway | Backend deployment     |
-| Neon / Supabase  | PostgreSQL hosting     |
+An LLM-based service may be integrated for:
+
+* Solution explanations
+* Personalized feedback
+* Mistake analysis
+* Learning recommendations
+* Concept explanations
+
+### Development
+
+| Technology       | Purpose             |
+| ---------------- | ------------------- |
+| Git              | Version control     |
+| GitHub           | Source management   |
+| Vercel           | Frontend deployment |
+| Render / Railway | Backend deployment  |
+| Neon / Supabase  | PostgreSQL hosting  |
 
 ---
 
@@ -212,47 +431,48 @@ PostgreSQL is being used intentionally to gain practical experience with relatio
           Frontend                       Backend
           Next.js                       Express.js
               |                             |
-              |                        REST API
+              |                         REST API
               |                             |
               +--------------+--------------+
                              |
                          PostgreSQL
                              |
-              +--------------+--------------+
-              |              |              |
-            Users        Sessions       Analytics
-              |              |              |
-        Achievements     Errors        Performance
-        Streaks          Statistics    Weak Keys
-        Challenges
+       +---------------------+---------------------+
+       |                     |                     |
+     Users               Learning Data        Problem Data
+       |                     |                     |
+   Profiles           Mastery Scores       Problems
+   Progress           Attempts             Patterns
+   Goals              Mistakes             Concepts
+                      Hints                Solutions
 ```
 
 ---
 
-## Database Design
+## Database Model
 
-TYPEFORGE will use a relational PostgreSQL database.
-
-The planned data model includes:
+The planned relational database will contain entities such as:
 
 ```text
 users
   |
-  +-- typing_sessions
+  +-- learning_progress
+  |
+  +-- problem_attempts
   |       |
-  |       +-- session_errors
-  |       +-- typing_statistics
+  |       +-- submissions
+  |       +-- hints_used
   |
-  +-- achievements
+  +-- concept_mastery
   |
-  +-- user_achievements
+  +-- pattern_mastery
   |
-  +-- streaks
+  +-- learning_paths
   |
-  +-- daily_challenges
+  +-- user_goals
 ```
 
-The database will support historical analysis of typing performance and provide the data required for adaptive training.
+The database will provide the historical data required for adaptive recommendations and performance analysis.
 
 ---
 
@@ -265,12 +485,12 @@ TYPEFORGE/
 |   +-- src/
 |   |   +-- app/
 |   |   +-- components/
+|   |   +-- features/
 |   |   +-- lib/
 |   |
 |   +-- public/
 |   +-- package.json
 |   +-- tsconfig.json
-|   +-- ...
 |
 +-- backend/
 |   +-- src/
@@ -295,78 +515,83 @@ TYPEFORGE/
 
 ### Phase 1: Foundation
 
-* [x] Create project repository
+* [x] Initialize repository
 * [x] Set up Next.js frontend
 * [x] Set up Express backend
 * [x] Configure TypeScript
 * [x] Configure Git and GitHub
+* [x] Define initial product direction
 
-### Phase 2: Database
+### Phase 2: Product Interface
+
+* [ ] Build landing page
+* [ ] Establish visual design system
+* [ ] Build learning dashboard
+* [ ] Build problem workspace
+* [ ] Build progress interface
+* [ ] Add responsive design
+
+### Phase 3: Database
 
 * [ ] Design PostgreSQL schema
 * [ ] Create relational tables
 * [ ] Define relationships and constraints
 * [ ] Write SQL queries
-* [ ] Add database connection
-* [ ] Implement database operations
+* [ ] Connect Express to PostgreSQL
+* [ ] Implement database services
 
-### Phase 3: Typing Engine
+### Phase 4: Learning System
 
-* [ ] Build typing interface
-* [ ] Implement timer
-* [ ] Calculate WPM
-* [ ] Calculate accuracy
-* [ ] Track errors
-* [ ] Track backspaces
-* [ ] Create results screen
+* [ ] Create DSA concepts
+* [ ] Create problem taxonomy
+* [ ] Create learning paths
+* [ ] Define difficulty levels
+* [ ] Define concept prerequisites
+* [ ] Implement progression rules
 
-### Phase 4: User System
+### Phase 5: Problem-Solving Engine
 
-* [ ] User registration
-* [ ] User login
-* [ ] Authentication
-* [ ] User profiles
-* [ ] Session history
+* [ ] Problem workspace
+* [ ] Code editor
+* [ ] Submission handling
+* [ ] Test cases
+* [ ] Solution evaluation
+* [ ] Complexity analysis
 
-### Phase 5: Analytics and Adaptive Training
+### Phase 6: Adaptive Learning
 
-* [ ] Performance dashboard
-* [ ] WPM trends
-* [ ] Accuracy trends
-* [ ] Weak-key detection
-* [ ] Error pattern analysis
-* [ ] Adaptive exercises
+* [ ] Track attempts
+* [ ] Track hints
+* [ ] Track mistakes
+* [ ] Calculate concept mastery
+* [ ] Calculate pattern mastery
+* [ ] Recommend next problems
+* [ ] Implement progressive difficulty
 
-### Phase 6: Developer Mode
+### Phase 7: Analytics
 
-* [ ] Programming typing challenges
-* [ ] Language-based categories
-* [ ] Syntax analysis
-* [ ] Developer-specific statistics
+* [ ] Learning dashboard
+* [ ] Concept mastery visualization
+* [ ] Performance trends
+* [ ] Problem-solving statistics
+* [ ] Mistake analysis
+* [ ] Learning history
 
-### Phase 7: Gamification
+### Phase 8: AI Learning Assistant
 
-* [ ] Experience points
-* [ ] Levels
-* [ ] Achievements
-* [ ] Streaks
-* [ ] Daily challenges
-* [ ] Leaderboards
+* [ ] Concept explanations
+* [ ] Progressive hints
+* [ ] Solution analysis
+* [ ] Personalized feedback
+* [ ] Learning recommendations
 
-### Phase 8: AI Coach
+### Phase 9: Interview Preparation
 
-* [ ] Performance analysis
-* [ ] Personalized recommendations
-* [ ] Progress summaries
-* [ ] AI-generated training suggestions
-
-### Phase 9: Multiplayer
-
-* [ ] Real-time typing rooms
-* [ ] One-versus-one battles
-* [ ] Matchmaking
-* [ ] Battle results
-* [ ] Multiplayer leaderboard
+* [ ] Timed challenges
+* [ ] Interview simulations
+* [ ] Mixed-topic problems
+* [ ] Difficulty progression
+* [ ] Performance reports
 
 ---
 
@@ -374,7 +599,7 @@ TYPEFORGE/
 
 ### Prerequisites
 
-Make sure the following are installed:
+Install the following before running TYPEFORGE:
 
 * Node.js
 * npm
@@ -396,7 +621,7 @@ npm install
 npm run dev
 ```
 
-The frontend will be available at:
+Frontend:
 
 ```text
 http://localhost:3000
@@ -412,7 +637,7 @@ npm install
 npm run dev
 ```
 
-The backend will be available at:
+Backend:
 
 ```text
 http://localhost:5000
@@ -422,7 +647,7 @@ http://localhost:5000
 
 ## Environment Variables
 
-Environment-specific configuration will be stored in `.env` files and should never be committed to the repository.
+Environment-specific configuration should be stored in `.env` files and must not be committed to Git.
 
 Example:
 
@@ -436,21 +661,24 @@ JWT_SECRET=your_jwt_secret
 
 ## Project Goals
 
-TYPEFORGE is being developed to achieve three primary goals:
+TYPEFORGE is being developed around four primary goals:
 
-1. Build a practical and engaging typing training platform.
-2. Use performance data to provide personalized learning.
-3. Gain hands-on experience with modern full-stack development, SQL, PostgreSQL, APIs, authentication, real-time communication, analytics, and AI integration.
+1. Make DSA learning progressive rather than overwhelming.
+2. Help learners understand problem-solving patterns rather than memorize solutions.
+3. Use performance data to personalize the learning path.
+4. Provide practical experience with full-stack development, SQL, data analytics, algorithms, and AI.
 
 ---
 
 ## Current Status
 
-**Version:** 0.1.0
+**Version:** 0.2.0
 
-**Status:** In Development
+**Status:** Early Development
 
-The initial project structure and backend foundation have been established. Database implementation and the core typing engine are the next development milestones.
+The initial frontend and backend foundations have been established. The product direction has now evolved into a progressive DSA learning platform.
+
+The next milestone is the product interface, followed by the PostgreSQL data model and learning system.
 
 ---
 
@@ -466,4 +694,4 @@ GitHub: [MS04Monica](https://github.com/MS04Monica)
 
 ## License
 
-This project is currently under development. Licensing information will be added as the project approaches its first public release.
+This project is currently under development. Licensing information will be added before the first public release.
