@@ -10,3 +10,7 @@ dist/
 Thumbs.db
 .vscode/
 .idea/
+.agents/
+.claude/
+.cursor/
+.devin/
