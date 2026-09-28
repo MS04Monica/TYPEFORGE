@@ -1,39 +1,19 @@
 .hero {
   position: relative;
-
-  min-height: 730px;
-
-  padding: 55px 4vw 45px;
-
+  min-height: 680px;
+  padding: 48px 4vw 40px;
   overflow: hidden;
-
   isolation: isolate;
 }
 
-/* ==================================================
-   BACKGROUND GRID
-================================================== */
-
 .gridBackground {
   position: absolute;
-
   inset: 0;
-
   z-index: -3;
-
   background-image:
-    linear-gradient(
-      rgba(36, 43, 191, 0.055) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(36, 43, 191, 0.055) 1px,
-      transparent 1px
-    );
-
-  background-size: 46px 46px;
-
+    linear-gradient(rgba(36, 43, 191, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 43, 191, 0.055) 1px, transparent 1px);
+  background-size: 44px 44px;
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.7),
@@ -42,633 +22,262 @@
   );
 }
 
-/* ==================================================
-   BACKGROUND RINGS
-================================================== */
-
 .rings {
   position: absolute;
-
   z-index: -2;
-
   top: 48%;
   left: 61%;
-
-  width: 760px;
-  height: 760px;
-
+  width: 720px;
+  height: 720px;
   transform: translate(-50%, -50%);
-
-  border: 1px solid rgba(36, 43, 191, 0.095);
-
+  border: 1px solid rgba(36, 43, 191, 0.08);
   border-radius: 50%;
-
   pointer-events: none;
 }
 
 .rings::before {
   position: absolute;
-
   inset: 65px;
-
-  border: 1px solid rgba(36, 43, 191, 0.075);
-
+  border: 1px solid rgba(36, 43, 191, 0.06);
   border-radius: 50%;
-
   content: "";
 }
 
 .rings::after {
   position: absolute;
-
   inset: 140px;
-
-  border: 1px solid rgba(36, 43, 191, 0.055);
-
+  border: 1px solid rgba(36, 43, 191, 0.04);
   border-radius: 50%;
-
   content: "";
 }
 
-/* ==================================================
-   MAIN LAYOUT
-================================================== */
-
 .heroLayout {
   position: relative;
-
   z-index: 5;
-
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 0.95fr)
-    minmax(500px, 1.05fr);
-
+  grid-template-columns: minmax(0, 1fr) minmax(460px, 1.05fr);
   align-items: center;
-
-  width: min(100%, 1450px);
-
-  min-height: 625px;
-
+  width: min(100%, 1320px);
+  min-height: 560px;
   margin: 0 auto;
-
-  gap: 5vw;
+  gap: 4vw;
 }
-
-/* ==================================================
-   HERO COPY
-================================================== */
 
 .heroCopy {
   position: relative;
-
   min-width: 0;
 }
 
-/* ==================================================
-   EYEBROW
-================================================== */
-
 .eyebrow {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   color: #242bbf;
-
-  font-family:
-    "Courier New",
-    monospace;
-
-  font-size: 10px;
-
+  font-family: "Courier New", monospace;
+  font-size: 13px;
   font-weight: 700;
-
   letter-spacing: 0.15em;
-
   line-height: 1;
 }
 
 .eyebrowLine {
   display: block;
-
   width: 52px;
-
   height: 2px;
-
   background: #242bbf;
 }
 
-/* ==================================================
-   MAIN TYPOGRAPHY
-================================================== */
-
 .title {
   display: flex;
-
   flex-direction: column;
-
   width: max-content;
-
   max-width: 100%;
-
-  margin: 43px 0 0;
-
-  font-size: clamp(
-    4.2rem,
-    6.35vw,
-    6.9rem
-  );
-
+  margin: 28px 0 0;
+  font-size: clamp(2.8rem, 4vw, 4.2rem);
   font-weight: 950;
-
-  line-height: 0.88;
-
-  letter-spacing: -0.075em;
-
+  line-height: 1.02;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
 }
 
-.lineBlack {
+.lineBlack,
+.lineBlue {
   display: block;
-
-  color: #101019;
-
   white-space: nowrap;
+  padding-right: 0.05em;
+}
+
+.lineBlack {
+  color: #101019;
 }
 
 .lineBlue {
-  display: block;
-
   color: #242bbf;
-
-  white-space: nowrap;
 }
-
-/* ==================================================
-   PATTERN — TWO T DETAIL
-================================================== */
 
 .doubleT {
   display: inline-block;
-
-  margin-left: 0.035em;
-
-  letter-spacing: 0.055em;
+  margin-left: 0.02em;
+  letter-spacing: 0.04em;
 }
-
-/* ==================================================
-   PROBLEM REVEAL
-================================================== */
 
 .problemHidden {
   opacity: 0;
-
-  transform: translateY(20px);
-
-  clip-path: inset(
-    0 100% 0 0
-  );
+  transform: translateY(16px);
+  clip-path: inset(0 100% 0 0);
 }
 
 .problemVisible {
   opacity: 1;
-
   transform: translateY(0);
-
-  clip-path: inset(
-    0 0 0 0
-  );
-
+  clip-path: inset(0 0 0 0);
   transition:
     opacity 0.6s ease,
-    transform 0.75s
-      cubic-bezier(
-        0.22,
-        1,
-        0.36,
-        1
-      ),
-    clip-path 0.95s
-      cubic-bezier(
-        0.22,
-        1,
-        0.36,
-        1
-      );
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    clip-path 0.95s cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* ==================================================
-   DIVIDER
-================================================== */
 
 .divider {
   width: 52px;
-
   height: 2px;
-
-  margin-top: 42px;
-
+  margin-top: 28px;
   background: #242bbf;
 }
 
-/* ==================================================
-   DESCRIPTION
-================================================== */
-
 .description {
-  max-width: 470px;
-
-  margin: 24px 0 0;
-
-  color: rgba(
-    16,
-    16,
-    25,
-    0.66
-  );
-
-  font-size: 16px;
-
-  line-height: 1.7;
+  max-width: 430px;
+  margin: 20px 0 0;
+  color: rgba(16, 16, 25, 0.7);
+  font-size: 15px;
+  line-height: 1.65;
 }
-
-/* ==================================================
-   ACTIONS
-================================================== */
 
 .actions {
   display: flex;
-
   align-items: center;
-
-  gap: 32px;
-
-  margin-top: 31px;
-}
-
-.primaryButton {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 35px;
-
-  min-width: 230px;
-
-  padding: 17px 20px;
-
-  border: 0;
-
-  background: #242bbf;
-
-  color: #fff0c9;
-
-  font-family:
-    "Courier New",
-    monospace;
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.primaryButton:hover {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 12px 28px
-    rgba(
-      36,
-      43,
-      191,
-      0.2
-    );
+  gap: 28px;
+  margin-top: 28px;
 }
 
 .secondaryButton {
   display: flex;
-
   align-items: center;
-
-  gap: 12px;
-
-  padding: 10px 0;
-
+  gap: 10px;
+  padding: 8px 0;
   border: 0;
-
-  border-bottom: 1px solid
-    #242bbf;
-
+  border-bottom: 1px solid #242bbf;
   background: transparent;
-
   color: #242bbf;
-
-  font-family:
-    "Courier New",
-    monospace;
-
+  font-family: "Courier New", monospace;
   font-size: 10px;
-
   font-weight: 700;
-
   letter-spacing: 0.1em;
-
   cursor: pointer;
 }
 
 .arrow {
-  font-size: 17px;
-
+  font-size: 15px;
   line-height: 1;
 }
 
-/* ==================================================
-   FLOATING DSA TERMS
-================================================== */
-
 .floatingTerm {
   position: absolute;
-
   z-index: -1;
-
-  color: rgba(
-    36,
-    43,
-    191,
-    0.2
-  );
-
-  font-family:
-    "Courier New",
-    monospace;
-
+  color: rgba(36, 43, 191, 0.09);
+  font-family: "Courier New", monospace;
   font-size: 10px;
-
   pointer-events: none;
-
-  animation:
-    floatingTerm 5s
-    ease-in-out infinite;
+  animation: floatingTerm 5s ease-in-out infinite;
 }
 
-.termOne {
-  top: 12%;
-
-  left: 50%;
-}
-
-.termTwo {
-  top: 29%;
-
-  left: 39%;
-
-  animation-delay: 0.7s;
-}
-
-.termThree {
-  top: 60%;
-
-  left: 37%;
-
-  animation-delay: 1.2s;
-}
-
-.termFour {
-  top: 88%;
-
-  left: 51%;
-
-  animation-delay: 1.8s;
-}
-
-.termFive {
-  top: 15%;
-
-  right: 7%;
-
-  animation-delay: 0.4s;
-}
-
-.termSix {
-  top: 39%;
-
-  right: 7%;
-
-  animation-delay: 1s;
-}
-
-.termSeven {
-  top: 67%;
-
-  right: 7%;
-
-  animation-delay: 1.6s;
-}
+.termOne { top: 10%; left: 48%; }
+.termTwo { top: 28%; left: 38%; animation-delay: 0.7s; }
+.termThree { top: 62%; left: 36%; animation-delay: 1.2s; }
+.termFour { top: 86%; left: 49%; animation-delay: 1.8s; }
+.termFive { top: 12%; right: 5%; animation-delay: 0.4s; }
+.termSix { top: 38%; right: 5%; animation-delay: 1s; }
+.termSeven { top: 66%; right: 5%; animation-delay: 1.6s; }
 
 @keyframes floatingTerm {
-  0%,
-  100% {
-    opacity: 0.2;
-
-    transform: translateY(0);
-  }
-
-  50% {
-    opacity: 0.48;
-
-    transform: translateY(-6px);
-  }
+  0%, 100% { opacity: 0.12; transform: translateY(0); }
+  50% { opacity: 0.35; transform: translateY(-5px); }
+}
+.holdCtaButton {
+  min-width: 220px;
+  height: 48px;
+  padding: 0 24px !important;
+  font-family: "Courier New", monospace !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.holdCtaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(36, 43, 191, 0.25);
+}
 /* ==================================================
-   LARGE DESKTOP
+   HOLD BUTTON & TOOLTIP STYLING
 ================================================== */
 
-@media (min-width: 1500px) {
-  .hero {
-    padding-left: 4.2vw;
-
-    padding-right: 4.2vw;
-  }
-
-  .heroLayout {
-    gap: 4vw;
-  }
-
-  .title {
-    font-size: 6.7rem;
-  }
+.buttonTooltipWrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-/* ==================================================
-   TABLET
-================================================== */
-
-@media (max-width: 1150px) {
-  .hero {
-    padding:
-      50px
-      6vw
-      70px;
-  }
-
-  .heroLayout {
-    grid-template-columns: 1fr;
-
-    min-height: auto;
-
-    gap: 60px;
-  }
-
-  .heroCopy {
-    max-width: 850px;
-  }
-
-  .title {
-    font-size: clamp(
-      4rem,
-      9vw,
-      6rem
-    );
-  }
-
-  .rings {
-    top: 57%;
-
-    left: 68%;
-
-    width: 700px;
-
-    height: 700px;
-  }
+.customHoldBtn {
+  min-width: 230px !important;
+  height: 50px !important;
+  padding: 0 24px !important;
+  font-family: "Courier New", monospace !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  border: 1px solid #242bbf !important;
+  box-shadow: 0 4px 14px rgba(16, 16, 25, 0.15) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
-/* ==================================================
-   MOBILE
-================================================== */
-
-@media (max-width: 700px) {
-  .hero {
-    min-height: auto;
-
-    padding:
-      40px
-      20px
-      65px;
-  }
-
-  .heroLayout {
-    min-height: auto;
-
-    gap: 50px;
-  }
-
-  .eyebrow {
-    font-size: 9px;
-  }
-
-  .eyebrowLine {
-    width: 38px;
-  }
-
-  .title {
-    width: 100%;
-
-    margin-top: 34px;
-
-    font-size:
-      clamp(
-        3.15rem,
-        14vw,
-        4.8rem
-      );
-
-    line-height: 0.9;
-
-    letter-spacing: -0.07em;
-  }
-
-  .lineBlack,
-  .lineBlue {
-    white-space: normal;
-  }
-
-  .description {
-    max-width: 390px;
-
-    font-size: 14px;
-  }
-
-  .actions {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    gap: 22px;
-  }
-
-  .primaryButton {
-    min-width: 215px;
-  }
-
-  .rings,
-  .floatingTerm {
-    display: none;
-  }
+.customHoldBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(36, 43, 191, 0.25) !important;
 }
 
-/* ==================================================
-   VERY SMALL MOBILE
-================================================== */
-
-@media (max-width: 420px) {
-  .hero {
-    padding:
-      35px
-      17px
-      55px;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
-  .description {
-    font-size: 13px;
-  }
+/* Tooltip message that appears on hover */
+.tooltipMessage {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  white-space: nowrap;
+  padding: 5px 10px;
+  background: #242bbf;
+  color: #fff0c9;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
 }
 
-/* ==================================================
-   REDUCED MOTION
-================================================== */
+.tooltipMessage::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 16px;
+  border-width: 4px 4px 0;
+  border-style: solid;
+  border-color: #242bbf transparent transparent;
+}
 
-@media (prefers-reduced-motion: reduce) {
-  .floatingTerm {
-    animation: none;
-  }
-
-  .problemHidden,
-  .problemVisible {
-    opacity: 1;
-
-    transform: none;
-
-    clip-path: none;
-
-    transition: none;
-  }
+/* Show tooltip when hovering over wrapper or button */
+.buttonTooltipWrapper:hover .tooltipMessage {
+  opacity: 1;
+  transform: translateY(0);
 }
