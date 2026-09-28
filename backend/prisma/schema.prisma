@@ -1,0 +1,131 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id               String            @id @default(uuid())
+  email            String            @unique
+  username         String            @unique
+  passwordHash     String
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  
+  attempts         ProblemAttempt[]
+  conceptMasteries ConceptMastery[]
+  patternMasteries PatternMastery[]
+}
+
+model Concept {
+  id          String           @id @default(uuid())
+  slug        String           @unique
+  name        String
+  description String?
+  
+  problems    Problem[]
+  masteries   ConceptMastery[]
+}
+
+model Pattern {
+  id          String           @id @default(uuid())
+  slug        String           @unique
+  name        String
+  description String?
+  
+  problems    ProblemPattern[]
+  masteries   PatternMastery[]
+}
+
+enum Difficulty {
+  EASY
+  INTERMEDIATE
+  ADVANCED
+}
+
+model Problem {
+  id             String           @id @default(uuid())
+  slug           String           @unique
+  title          String
+  description    String
+  difficulty     Difficulty
+  conceptId      String
+  concept        Concept          @relation(fields: [conceptId], references: [id])
+  
+  patterns       ProblemPattern[]
+  hints          Hint[]
+  attempts       ProblemAttempt[]
+}
+
+model ProblemPattern {
+  problemId String
+  patternId String
+  problem   Problem @relation(fields: [problemId], references: [id])
+  pattern   Pattern @relation(fields: [patternId], references: [id])
+
+  @@id([problemId, patternId])
+}
+
+model Hint {
+  id         String   @id @default(uuid())
+  problemId  String
+  order      Int
+  content    String
+  problem    Problem  @relation(fields: [problemId], references: [id])
+  
+  hintUsages HintUsage[]
+}
+
+model ProblemAttempt {
+  id             String      @id @default(uuid())
+  userId         String
+  problemId      String
+  status         String
+  timeSpentSec   Int
+  code           String
+  timeComplexity String?
+  spaceComplexity String?
+  mistakeTag     String?
+  createdAt      DateTime    @default(now())
+
+  user       User        @relation(fields: [userId], references: [id])
+  problem    Problem     @relation(fields: [problemId], references: [id])
+  hintsUsed  HintUsage[]
+}
+
+model HintUsage {
+  id        String         @id @default(uuid())
+  attemptId String
+  hintId    String
+  usedAt    DateTime       @default(now())
+
+  attempt   ProblemAttempt @relation(fields: [attemptId], references: [id])
+  hint      Hint           @relation(fields: [hintId], references: [id])
+}
+
+model ConceptMastery {
+  userId      String
+  conceptId   String
+  score       Float    @default(0.0)
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id])
+  concept     Concept  @relation(fields: [conceptId], references: [id])
+
+  @@id([userId, conceptId])
+}
+
+model PatternMastery {
+  userId      String
+  patternId   String
+  score       Float    @default(0.0)
+  updatedAt   DateTime @updatedAt
+
+  user        User     @relation(fields: [userId], references: [id])
+  pattern     Pattern  @relation(fields: [patternId], references: [id])
+
+  @@id([userId, patternId])
+}
